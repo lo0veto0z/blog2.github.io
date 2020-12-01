@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      
+      <style>
+        #container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+/* 
+
+#content {
+  position: relative;
+}
+#content img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+} */
+body{
+  background-color: #00b7ff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+      </style>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body onload="clickon()" style="background-color:blue" >
+
+
+
+
+    <section class="d-flex justify-content-center" 
+    style="margin: 10% 5%; border-radius: 20px;">
+      
+        
+   <div class="row">
+       <div class="col-lg-6 col-md-6 col-sm-6">
+
+    
+        <h1 style="font-size: 5rem;
+        font-weight: 500;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: white;">Hello there, <span style="font-weight: 100;">I'm Lovetoz</span>  <br>
+      </h1>
+      <p style="font-family: 'Courier New', Courier, monospace; color:white;font-size: 3rem;max-width: 100%;">Welcome to my website, here you can see 
+          <a style="color: white;" href="#myprojects">
+          <u >
+             My Projects
+          </u>
+        </a> 
+      <br>
+  and also here I share my knowledge on variousd technology.</p>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-6">
+      <img src="images/hello.png" style="width: 70%;">
+     </div>
+       </div>
+      
+
+  
+     
+    </section >
+
+<hr style=" border: 1px solid white;">
+<div class="row">
+<div style="padding: 5% 7%; max-width: 100%;" class="col-lg-12 col-md-12">
+    <div style="margin: 5%; border-radius: 10px;">
+      <h1 style=" font-weight: 500; font-weight: bold; font-family: sans-serif; font-size: 5rem; color: white;">
+       Stay Update </h1>
+  
+        
+        <form style="height:4rem;">
+          <div class="col-lg-10 col-sm-10 my-5">
+      <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div style="height: 5rem; font-size: large;" class="input-group-text">email</div>
+        </div>
+        <input style="height: 5rem; font-size: large;" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+        <div >
+          <button  onclick="submitformdata()" style="height: 5rem; 
+          font-size: large;" type="button" class="btn btn-success">Submit</button></div>
+      </div>
+      </div>
+    </div>
+        </form><br>
+        <p class="col-lg-6 col-md-6" id="putemailid" style="color:white;
+         display: none; font-size: 2rem;">Kindly, fill your email id &#128519;</p>
+       
+        <p class="col-lg-6 col-md-6" id="youjustmadeourday" style="color:white; display: none; font-size: 2rem;">You just made ❤️ our day</p>
+        </div>
+</div>
+  </div>
+
+
+
+
+
+
+  <section>
+    
+    <div style="margin: 3%;background-color: white; border-radius: 25px;">
+      <div class="container" style="padding:3%;">
+        <section id="myprojects">
+
+         
+
+          <div id="container1" class="container">
+            <div class="button-wrapper">
+              <button type="button" class="btn btn-primary" id="button1" onclick="myfunction1()"
+               style="font-size: 1.5rem;background-color: blue;font-weight: 700;color: white;height: 4rem;">My Applications</button>
+              <button id="button2" type="button" class="btn "    onclick="myfunction2()" style="font-size: 1.5rem;height: 4rem;
+               background-color:blue;font-weight: 700;color: white;">My Illustrations</button>
+            </div>
+          </div>
+      
+
+          <div id="hii">
+
+            <div class="row">
+  
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+    
+    
+            
+    
+              </div>
+
+          </div>
+          <div id="there">
+
+            <div class="row">
+  
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/electrician.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card qw" style="width: 18rem;margin: 2% 30%;">
+                  <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/electrician.png" alt="Plumber in kharar">
+                  <div class="card-body">
+                    <h5 class="card-title mm">Plumber</h5>
+                    <p class="card-text ">
+                    </p>
+      
+      
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Visit now</button>
+      
+                  </div>
+                </div>
+              </div>
+    
+    
+            
+    
+              </div>
+
+          </div>
+        </section>
+      
+          </div>
+          </div>
+
+  </section>
+
+
+
+  <script>
+    
+function submitformdata(){
+  document.querySelector("#youjustmadeourday").style.display="block";
+  var valuedata;
+   valuedata= document.querySelector("#inlineFormInputGroup").value;
+   if (valuedata=="") {
+    document.querySelector("#putemailid").style.display="block";
+    document.querySelector("#youjustmadeourday").style.display="none";
+   }
+   else{
+    document.querySelector("#putemailid").style.display="none";
+    document.querySelector("#youjustmadeourday").style.display="block";
+  
+   url ="https://api.telegram.org/bot873917030:AAF8emgNB8GXq3OIF2gbXQXJBdFnMW6P7jI/sendMessage?chat_id=1221259705&text=Name:" + valuedata + " &parse_mode=HTML "  ;
+
+fetch(url, {
+  method: 'post',
+  headers: {
+    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+  },
+  body: 'foo=bar&lorem=ipsum'
+
+});}
+
+   
+}
+
+    var i =document.querySelector("#hii").style;
+    var j=document.querySelector("#there").style;
+    var button1=document.querySelector("#button1").style;
+    var button2=document.querySelector("#button2").style;
+  function  myfunction1(){
+
+            i.display="block";
+            button1.backgroundColor="blue";
+            j.display="none";
+            button2.backgroundColor="rgba(0, 0, 255, 0.548)"
+        
+    }
+
+   function myfunction2(){
+      
+            j.display="block";
+            button2.backgroundColor="blue";
+           i.display="none";
+           button1.backgroundColor="rgba(0, 0, 255, 0.548)";
+       
+    }
+    function clickon(){
+      document.getElementById("home").click();
+    }
+    function clickhas(){
+      alert('hii');
+    }
+    window.onload()=clickon;
+    window.onload()=clickhas;
+</script>
+
+<script>
+  function clickon(){
+  document.querySelector("#button1").click();
+  
+}
+</script> 
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<section id="myprojects" class="justify-content-center" style="  background-color: white;  margin: 1% 5%; border-radius: 20px;">
+  
+
+    <div class="container">
+ <div style="margin: 1% 30%;">
+        <ul class="nav nav-pills">
+          <li class="nav-item active" id="applicationsactive"><a style="background-color: rgba(0, 0, 255, 0.644); color: white;" 
+            data-toggle="pill"   href="#home">Applications</a></li>
+          <li><a data-toggle="pill" href="#menu1"
+             style="background-color: rgba(0, 0, 255, 0.644); color: white;">Illustrations</a></li>
+        </ul>
+    </div>
+        <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+          
+            
+            <section>
+              <div style="margin: 3%;">
+                <div class="container">
+                  <div class="row">
+            
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" style="width: 10rem;margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                        <div class="card-body">
+                          <h5 class="card-title mm">Plumber</h5>
+                          <p class="card-text ">
+                          </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="electrician.png" alt="Electrician landran road">
+                        <div class="card-body">
+                          <h5 class="card-title mm">Electrician</h5>
+                          <p class="card-text"> </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Electrician">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="acrepair.png" alt="Landran road service">
+                        <div class="card-body">
+                          <h5 class="card-title mm"> <div style="  font-size:15px">Air Conditioner/Refrigerator/Juicer</div> Repair and Servicing</h5>
+                          <p class="card-text"> </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Air Conditioner Service">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+            
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div style="margin: 3%;">
+                <div class="container">
+                  <div class="row">
+            
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" style="width: 10rem;margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="fridge .png" alt="Best service in kharar">
+                        <div class="card-body">
+                          <h5 class="card-title mm">Refrigerator Repair</h5>
+                          <p class="card-text ">
+                          </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Electronic Device Repair">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+            
+            
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="repait.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title mm">Electronic Device Service</h5>
+                          <p class="card-text"> </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Dragling">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+            
+                   
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="card qw" id="vv" style="width: 10rem;margin: 2% 30%;">
+                        <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="technician.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title mm">Cannot Find Your Service ?</h5>
+                          <p class="card-text "> Tell Us now
+                          </p>
+            
+            
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Tell Us Your Service Here">Hire Now</button>
+            
+                        </div>
+                      </div>
+                    </div>
+            
+                  </div>
+                </div>
+              </div>
+            
+            
+            
+            </section>
+
+
+           </div>
+          <div id="menu1" class="tab-pane fade">
+          
+          
+          
+          
+          
+          <section>
+            <div style="margin: 3%;">
+              <div class="container">
+                <div class="row">
+          
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" style="width: 10rem;margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/plumber.png" alt="Plumber in kharar">
+                      <div class="card-body">
+                        <h5 class="card-title mm">Plumber</h5>
+                        <p class="card-text ">
+                        </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Plumber">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="https://kharar.herokuapp.com/electrician.png" alt="Electrician landran road">
+                      <div class="card-body">
+                        <h5 class="card-title mm">Electrician</h5>
+                        <p class="card-text"> </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Electrician">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="acrepair.png" alt="Landran road service">
+                      <div class="card-body">
+                        <h5 class="card-title mm"> <div style="  font-size:15px">Air Conditioner/Refrigerator/Juicer</div> Repair and Servicing</h5>
+                        <p class="card-text"> </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Air Conditioner Service">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          
+          
+            <div style="margin: 3%;">
+              <div class="container">
+                <div class="row">
+          
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" style="width: 10rem;margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="fridge .png" alt="Best service in kharar">
+                      <div class="card-body">
+                        <h5 class="card-title mm">Refrigerator Repair</h5>
+                        <p class="card-text ">
+                        </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Electronic Device Repair">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+          
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" style="width: 10rem; margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="repait.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title mm">Electronic Device Service</h5>
+                        <p class="card-text"> </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Dragling">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                 
+                  
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="card qw" id="vv" style="width: 10rem;margin: 2% 30%;">
+                      <img class="card-img-top" data-target="#exampleModal" data-toggle="modal" src="technician.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title mm">Cannot Find Your Service ?</h5>
+                        <p class="card-text "> Tell Us now
+                        </p>
+          
+          
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="jai(id)" id="Tell Us Your Service Here">Hire Now</button>
+          
+                      </div>
+                    </div>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+          
+          
+          
+          </section>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          </div>
+          
+        </div>
+      </div>
+ 
+</section>   -->
