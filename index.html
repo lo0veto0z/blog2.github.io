@@ -90,7 +90,21 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
          <br>
          (try it without filling anything)
        </p>
+      </div>
+       <form style="height:4rem;">
+        <div class="col-lg-10 col-sm-10 my-5">
+    <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Name</label>
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+        <div style="height: 5rem; font-size: large;" class="input-group-text">name</div>
+      </div>
+      <input style="height: 5rem; font-size: large;" type="text" class="form-control" id="nameofperson" 
+      placeholder="Type your name here">
+      <div >
+    </div>
+    </div>
   
+      </form>
         
         <form style="height:4rem;">
           <div class="col-lg-10 col-sm-10 my-5">
@@ -299,6 +313,8 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 function submitformdata(){
   document.querySelector("#youjustmadeourday").style.display="block";
   var valuedata;
+  var nameofperson;
+  nameofperson = document.querySelector("#nameofperson").value;
    valuedata= document.querySelector("#inlineFormInputGroup").value;
    if (valuedata=="") {
     document.querySelector("#putemailid").style.display="block";
@@ -308,7 +324,7 @@ function submitformdata(){
     document.querySelector("#putemailid").style.display="none";
     document.querySelector("#youjustmadeourday").style.display="block";
   
-   url ="https://api.telegram.org/bot873917030:AAF8emgNB8GXq3OIF2gbXQXJBdFnMW6P7jI/sendMessage?chat_id=1221259705&text=Name:" + valuedata + " &parse_mode=HTML "  ;
+   url ="https://api.telegram.org/bot873917030:AAF8emgNB8GXq3OIF2gbXQXJBdFnMW6P7jI/sendMessage?chat_id=1221259705&text=Name:" + nameofperson+ " email id:" valuedata + " &parse_mode=HTML "  ;
 
 fetch(url, {
   method: 'post',
