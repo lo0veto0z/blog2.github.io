@@ -81,31 +81,30 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 <hr style=" border: 1px solid white;">
 <div class="row">
-<div style="padding: 5% 7%; max-width: 100%;" class="col-lg-12 col-md-12">
+<!-- <div style="padding: 5% 7%; max-width: 100%;" class="col-lg-12 col-md-12">
     <div style="margin: 5%; border-radius: 10px;">
       <h1 style=" font-weight: 500; font-weight: bold; font-family: sans-serif; font-size: 5rem; color: white;">
        Stay Update </h1>
        <p style="font-family: 'Courier New', Courier, monospace; color:white;font-size: 3rem;max-width: 100%;">
         Just By Submitting your email id 
          <br>
-         (try it without filling anything)
+         (try to submit before filling filling anything)
        </p>
-      </div>
+  
        <form style="height:4rem;">
         <div class="col-lg-10 col-sm-10 my-5">
     <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Name</label>
     <div class="input-group mb-2">
       <div class="input-group-prepend">
-        <div style="height: 5rem; font-size: large;" class="input-group-text">name</div>
+        <div style="height: 5rem; font-size: large;" class="input-group-text">Name</div>
       </div>
       <input style="height: 5rem; font-size: large;" type="text" class="form-control" id="nameofperson" 
-      placeholder="Type your name here">
-      <div >
+      placeholder=" type your name here" required>
+ 
     </div>
     </div>
-  
-      </form>
-        
+  </div>
+</form>
         <form style="height:4rem;">
           <div class="col-lg-10 col-sm-10 my-5">
       <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Username</label>
@@ -121,12 +120,56 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       </div>
       </div>
     </div>
-        </form><br>
-        <p class="col-lg-6 col-md-6" id="putemailid" style="color:white;
-         display: none; font-size: 2rem;">Kindly, fill your email id &#128519;</p>
+        </form> -->
        
-        <p class="col-lg-6 col-md-6" id="youjustmadeourday" style="color:white; display: none; font-size: 2rem;">You just made my day ❤️</p>
-        </div>
+        <div style="padding: 5% 7%; max-width: 100%;" class="col-lg-12 col-md-12">
+          <div style="margin: 5%; border-radius: 10px;">
+            <h1 style=" font-weight: 500; font-weight: bold; font-family: sans-serif; font-size: 5rem; color: white;">
+             Stay Update </h1>
+             <p style="font-family: 'Courier New', Courier, monospace; color:white;font-size: 3rem;max-width: 100%;">
+              Just By Submitting your email id 
+               <br>
+               (try to submit before filling filling anything)
+             </p>
+        
+             <form style="height:4rem;">
+              <div class="col-lg-10 col-sm-10 my-5">
+          <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Name</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div style="height: 5rem; font-size: large;" class="input-group-text">Name</div>
+            </div>
+            <input style="height: 5rem; font-size: large;" type="text" class="form-control" id="nameofperson" placeholder=" type your name here" required="">
+       
+          </div>
+          </div>
+        </form></div>
+      
+              <form style="height:4rem;">
+                <div class="col-lg-10 col-sm-10 my-5">
+            <label style="height: 5rem;" class="sr-only" for="inlineFormInputGroup">Username</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div style="height: 5rem; font-size: large;" class="input-group-text">email</div>
+              </div>
+              <input style="height: 5rem; font-size: large;" type="text" class="form-control" id="inlineFormInputGroup" placeholder=" type your email id here">
+              <div>
+                <button onclick="submitformdata()" style="height: 5rem; 
+                font-size: large;" type="button" class="btn btn-success">Submit</button></div>
+            </div>
+            </div>
+          </form>
+        
+       <p class="col-lg-6 col-md-6" id="putemailid" style="color:white;
+       display: none;margin-left: 2%; font-size: 2rem;">Kindly, fill your email id or name &#128519;</p>
+     
+      <p class="col-lg-6 col-md-6" id="youjustmadeourday" style="color:white; display: none; font-size: 2rem;">You just made my day ❤️</p>
+    </div>
+
+
+       </div>
+</div>
+       
 </div>
   </div>
 
@@ -314,9 +357,9 @@ function submitformdata(){
   document.querySelector("#youjustmadeourday").style.display="block";
   var valuedata;
   var nameofperson;
-  nameofperson = document.querySelector("#nameofperson").value;
+  nameofperson =  document.querySelector("#nameofperson").value;
    valuedata= document.querySelector("#inlineFormInputGroup").value;
-   if (valuedata=="") {
+   if (valuedata=="" || nameofperson=="") {
     document.querySelector("#putemailid").style.display="block";
     document.querySelector("#youjustmadeourday").style.display="none";
    }
@@ -324,7 +367,7 @@ function submitformdata(){
     document.querySelector("#putemailid").style.display="none";
     document.querySelector("#youjustmadeourday").style.display="block";
   
-   url ="https://api.telegram.org/bot873917030:AAF8emgNB8GXq3OIF2gbXQXJBdFnMW6P7jI/sendMessage?chat_id=1221259705&text=Name:" + nameofperson+ " email id:" valuedata + " &parse_mode=HTML "  ;
+   url ="https://api.telegram.org/bot873917030:AAF8emgNB8GXq3OIF2gbXQXJBdFnMW6P7jI/sendMessage?chat_id=1221259705&text=Name:" + nameofperson +"name:"+ valuedata +  " &parse_mode=HTML "  ;
 
 fetch(url, {
   method: 'post',
